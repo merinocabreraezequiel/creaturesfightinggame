@@ -1,0 +1,72 @@
+{
+    "version": 0,
+    "creatures": [
+        {
+            "name": "name",
+            "properties":{
+                "size": 0,
+                "weight": 0,
+                "agility": 0,
+                "strength":0
+            },
+            "capacities":{
+                "earth": 0,
+                "water": 0,
+                "fire": 0,
+                "air": 0
+            },
+            "weaknesses":{
+                "earth": 0,
+                "water": 0,
+                "fire": 0,
+                "air": 0
+            }
+
+         },
+         {
+            "name": "name",
+            "properties":{
+                "size": 0,
+                "weight": 0,
+                "agility": 0,
+                "strength":0
+            },
+            "capacities":{
+                "earth": 0,
+                "water": 0,
+                "fire": 0,
+                "air": 0
+            },
+            "weaknesses":{
+                "earth": 0,
+                "water": 0,
+                "fire": 0,
+                "air": 0
+            }
+
+         },
+         {
+            "name": "name",
+            "properties":{
+                "size": 0,
+                "weight": 0,
+                "agility": 0,
+                "strength":0
+            },
+            "capacities":{
+                "earth": 0,
+                "water": 0,
+                "fire": 0,
+                "air": 0
+            },
+            "weaknesses":{
+                "earth": 0,
+                "water": 0,
+                "fire": 0,
+                "air": 0
+            }
+
+         }
+        ],
+    "data": null
+}
