@@ -1,5 +1,7 @@
 #imports
 import pygame
+import json
+from types import SimpleNamespace
 
 # define a main function
 def main():
@@ -36,7 +38,10 @@ def main():
 
     # define a variable to control the main loop
     running = True
-     
+    
+    #load creatures
+    loadCriatures()
+
     # main loop
     while running:
         # event handling, gets all event from the event queue
@@ -61,7 +66,14 @@ def main():
         # and update the screen (don't forget that!)
         pygame.display.update()
         fpsClock.tick(FPS)
-     
+
+def loadCriatures():
+    j = open("creatures.json")
+    j.close()
+    data = json.loads(j)
+    # Parse JSON into an object with attributes corresponding to dict keys.
+    x = json.loads(data.creatures, object_hook=lambda d: SimpleNamespace(**d))
+    print(x.name, x.capabilities, x.weaknesses, x.energy)
      
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)

@@ -25,7 +25,7 @@
 
          },
          {
-            "name": "name",
+            "name": "name_second",
             "properties":{
                 "size": 0,
                 "weight": 0,
@@ -47,7 +47,7 @@
             "energy":0
          },
          {
-            "name": "name",
+            "name": "name_trith",
             "properties":{
                 "size": 0,
                 "weight": 0,
