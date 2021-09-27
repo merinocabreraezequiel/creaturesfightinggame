@@ -4,6 +4,10 @@ import json
 from collections import namedtuple
 from json import JSONEncoder
 
+#global vars
+creature = ""
+objects = ""
+
 # define a main function
 def main():
      
@@ -44,6 +48,14 @@ def main():
     loadCriatures()
     loadObjects()
 
+    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,True)))
+    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,True)
+    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,False)))
+    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,False)
+    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,True)))
+    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,True)
+    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,False)))
+    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,False)
     # main loop
     while running:
         # event handling, gets all event from the event queue
@@ -70,12 +82,14 @@ def main():
         fpsClock.tick(FPS)
 
 def loadCriatures():
+    global creature
     f = open("creatures.json", "r")
     string_creatures_double_quotes = f.read()
     creature = json.loads(string_creatures_double_quotes)
     print('creature: '+str(creature["creatures"]))
 
 def loadObjects():
+    global objects
     f = open("objects.json", "r")
     string_objects_double_quotes = f.read()
     objects = json.loads(string_objects_double_quotes)
@@ -84,7 +98,12 @@ def loadObjects():
 def JSONElementsCount(totalCountsJSON):
     return len(totalCountsJSON)
     #print(x.name, x.capabilities, x.weaknesses, x.energy)
-     
+
+def calculateHit(strength, attack_capability, defense_weakness):
+    aws = 1.5 if attack_capability else 1
+    dws = 0.75 if defense_weakness else 1
+    return strength * aws * dws
+
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)
 if __name__=="__main__":
