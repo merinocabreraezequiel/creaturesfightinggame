@@ -7,9 +7,9 @@
                 "size": 0,
                 "weight": 0,
                 "agility": 0,
-                "strength":0
+                "strength":10
             },
-            "capacities":{
+            "capabilities":{
                 "earth": 0,
                 "water": 0,
                 "fire": 0,
@@ -20,18 +20,19 @@
                 "water": 0,
                 "fire": 0,
                 "air": 0
-            }
+            },
+            "energy":100
 
          },
          {
-            "name": "name",
+            "name": "name_second",
             "properties":{
                 "size": 0,
                 "weight": 0,
                 "agility": 0,
                 "strength":0
             },
-            "capacities":{
+            "capabilities":{
                 "earth": 0,
                 "water": 0,
                 "fire": 0,
@@ -42,18 +43,18 @@
                 "water": 0,
                 "fire": 0,
                 "air": 0
-            }
-
+            },
+            "energy":0
          },
          {
-            "name": "name",
+            "name": "name_trith",
             "properties":{
                 "size": 0,
                 "weight": 0,
                 "agility": 0,
                 "strength":0
             },
-            "capacities":{
+            "capabilities":{
                 "earth": 0,
                 "water": 0,
                 "fire": 0,
@@ -64,8 +65,8 @@
                 "water": 0,
                 "fire": 0,
                 "air": 0
-            }
-
+            },
+            "energy":0
          }
         ],
     "data": null
