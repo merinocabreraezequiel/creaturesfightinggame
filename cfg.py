@@ -1,7 +1,8 @@
 #imports
 import pygame
 import json
-from types import SimpleNamespace
+from collections import namedtuple
+from json import JSONEncoder
 
 # define a main function
 def main():
@@ -39,8 +40,9 @@ def main():
     # define a variable to control the main loop
     running = True
     
-    #load creatures
+    #load elements
     loadCriatures()
+    loadObjects()
 
     # main loop
     while running:
@@ -68,12 +70,20 @@ def main():
         fpsClock.tick(FPS)
 
 def loadCriatures():
-    j = open("creatures.json")
-    j.close()
-    data = json.loads(j)
-    # Parse JSON into an object with attributes corresponding to dict keys.
-    x = json.loads(data.creatures, object_hook=lambda d: SimpleNamespace(**d))
-    print(x.name, x.capabilities, x.weaknesses, x.energy)
+    f = open("creatures.json", "r")
+    string_creatures_double_quotes = f.read()
+    creature = json.loads(string_creatures_double_quotes)
+    print('creature: '+str(creature["creatures"]))
+
+def loadObjects():
+    f = open("objects.json", "r")
+    string_objects_double_quotes = f.read()
+    objects = json.loads(string_objects_double_quotes)
+    print('objects: '+str(objects))
+
+def JSONElementsCount(totalCountsJSON):
+    return len(totalCountsJSON)
+    #print(x.name, x.capabilities, x.weaknesses, x.energy)
      
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)
