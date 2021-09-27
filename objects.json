@@ -1,0 +1,58 @@
+{
+    "version": 0,
+    "cures": [
+        {
+            "name": "Potion",
+            "capabilities":10
+         },
+         {
+            "name": "PotionX2",
+            "capabilities":30
+         },
+         {
+            "name": "PotionX3",
+            "capabilities":100
+         },
+         {
+            "name": "PotionXX",
+            "capabilities":9999
+         }
+        ],
+    "strong":[
+        {
+            "name": "Strong",
+            "capabilities":1.5
+         },
+         {
+            "name": "StrongX2",
+            "capabilities":2
+         },
+         {
+            "name": "StrongX3",
+            "capabilities":3
+         },
+         {
+            "name": "StrongXX",
+            "capabilities":5
+         }
+    ],
+    "Agility":[
+        {
+            "name": "Agility",
+            "capabilities":1.5
+         },
+         {
+            "name": "AgilityX2",
+            "capabilities":2
+         },
+         {
+            "name": "AgilityX3",
+            "capabilities":3
+         },
+         {
+            "name": "AgilityXX",
+            "capabilities":5
+         }
+    ],
+    "data": null
+}
