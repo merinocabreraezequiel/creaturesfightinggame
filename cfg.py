@@ -1,12 +1,14 @@
 #imports
 import pygame
 import json
-from collections import namedtuple
 from json import JSONEncoder
+
+import owncreature
 
 #global vars
 creature = ""
 objects = ""
+yourCreature = ""
 
 # define a main function
 def main():
@@ -48,14 +50,16 @@ def main():
     loadCriatures()
     loadObjects()
 
-    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,True)))
-    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,True)
-    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,False)))
-    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],True,False)
-    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,True)))
-    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,True)
-    print(str(creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,False)))
-    creature["creatures"][0]["energy"] = creature["creatures"][0]["energy"] - calculateHit(creature["creatures"][0]["properties"]["strength"],False,False)
+    owncreature.loadYourCreature()
+
+    owncreature.setEngery(owncreature.getEngery() - calculateHit(creature["creatures"][0]["properties"]["strength"],True,True))
+    owncreature.setEngery(owncreature.getEngery() - calculateHit(creature["creatures"][0]["properties"]["strength"],True,False))
+    owncreature.setEngery(owncreature.getEngery() - calculateHit(creature["creatures"][0]["properties"]["strength"],False,True))
+    owncreature.setEngery(owncreature.getEngery() - calculateHit(creature["creatures"][0]["properties"]["strength"],False,False))
+
+    owncreature.updateYourCreature()
+
+
     # main loop
     while running:
         # event handling, gets all event from the event queue
