@@ -19,7 +19,17 @@ def getEngery():
     global creature
     print ("get Engery: "+str(creature["creature"]["energy"]))
     return creature["creature"]["energy"]
-    
+
+def getCapabilities():
+    global creature
+    print ("get capabilities: "+str(creature["creature"]["capabilities"]))
+    return creature["creature"]["capabilities"]
+
+def getWeakness():
+    global creature
+    print ("get Engery: "+str(creature["creature"]["weaknesses"]))
+    return creature["creature"]["weaknesses"]
+
 def setEngery(newEnergy):
     global creature
     creature["creature"]["energy"] = newEnergy

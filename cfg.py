@@ -58,6 +58,8 @@ def main():
     owncreature.setEngery(owncreature.getEngery() - calculateHit(creature["creatures"][0]["properties"]["strength"],False,False))
 
     owncreature.updateYourCreature()
+    ownCreatureCaptabilities = owncreature.getCapabilities()
+    print ("owncreaturecapabilities"+str(ownCreatureCaptabilities))
 
 
     # main loop
